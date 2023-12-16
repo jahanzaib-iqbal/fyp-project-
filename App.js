@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 
@@ -12,6 +12,8 @@ import { Colors } from "./constants/styles";
 import HomeScreen from "./screens/HomeScreen";
 import DetailScreen from "./screens/DetailScreen";
 import SplashScreen from "./screens/SplashScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -24,10 +26,7 @@ export default function App() {
     "SF-Pro-Text-Semibold": require("./assets/font/SF-Pro-Text-Semibold.otf"),
   });
 
-  // if (!fontsLoaded) {
-  //   // Render some fallback UI while fonts are loading
-  //   return null
-  // }
+  
   const [isSplashLoading, setIsSplashLoading] = useState(true);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export default function App() {
       // Set a timeout if you want to display the splash screen for a fixed time
       setTimeout(() => {
         setIsSplashLoading(false);
-      }, 7000); // For example, 3000ms = 3 seconds
+      }, 4000); // For example, 3000ms = 3 seconds
     }
   }, [fontsLoaded, isSplashLoading]);
 
@@ -44,19 +43,16 @@ export default function App() {
   }
   return (
     <React.Fragment>
+      <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
       <NativeBaseProvider>
         <NavigationContainer>
-        <Stack.Navigator
-  screenOptions={{
-    contentStyle: { backgroundColor: Colors.fcfcfc },
-    headerTintColor: Colors.textColor,
-    headerTitleStyle: {
-      fontFamily: "SF-Pro-Text-Bold",
-    },
-    headerTitleAlign: "center",
-  }}
->
+        <Stack.Navigator initialRouteName="Welcome">
+<Stack.Screen
+    name="Welcome"
+    component={WelcomeScreen}
+    options={{ headerShown: false }}
+  />
   <Stack.Screen
     name="SignUpScreen"
     component={SignUpScreen}
@@ -92,6 +88,7 @@ export default function App() {
 
         </NavigationContainer>
       </NativeBaseProvider>
+      </SafeAreaView>
     </React.Fragment>
   );
 }
@@ -101,8 +98,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#FFFF",
+    
   },
 });
