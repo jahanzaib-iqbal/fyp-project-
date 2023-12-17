@@ -3,7 +3,6 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NativeBaseProvider } from "native-base";
 import SignUpScreen from "./screens/SignUpScreen";
@@ -13,6 +12,8 @@ import HomeScreen from "./screens/HomeScreen";
 import DetailScreen from "./screens/DetailScreen";
 import SplashScreen from "./screens/SplashScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
+import HeaderLeft from "./components/button/ScreenHeaderLeft";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -31,7 +32,7 @@ export default function App() {
 
   useEffect(() => {
     if (fontsLoaded && isSplashLoading) {
-      // Set a timeout if you want to display the splash screen for a fixed time
+      
       setTimeout(() => {
         setIsSplashLoading(false);
       }, 4000); // For example, 3000ms = 3 seconds
@@ -44,10 +45,21 @@ export default function App() {
   return (
     <React.Fragment>
       <SafeAreaView style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <NativeBaseProvider>
         <NavigationContainer>
-        <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Navigator
+              initialRouteName="Welcome"
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: Colors.backgroundColor,
+                  elevation: 0, // Removes elevation shadow on Android
+                  shadowOpacity: 0, // Removes shadow on iOS // Set your desired color here
+                  borderBottomWidth: 0, 
+                },
+                headerTintColor: Colors.backgroundColor, // This changes the color of the back button and title
+              }}
+            >
 <Stack.Screen
     name="Welcome"
     component={WelcomeScreen}
@@ -57,15 +69,17 @@ export default function App() {
     name="SignUpScreen"
     component={SignUpScreen}
     options={{
-      title: "Signup",
-      headerStyle: { backgroundColor: Colors.fcfcfc },
+      headerTitle:'',
+      headerLeft:()=>(
+        <HeaderLeft/>
+      )
     }}
   />
   <Stack.Screen
     name="LoginScreen"
     component={LoginScreen}
     options={{
-      title: "Login",
+      title: "",
       headerBackVisible: false,
     }}
   />
@@ -98,7 +112,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFF",
+    backgroundColor: Colors.backgroundColor,
     marginTop:50
     
   },

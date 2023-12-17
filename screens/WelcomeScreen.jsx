@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, View, Text,  Image } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import LargeBtn from '../components/button/LargeBtn';
+import { Colors } from '../constants/styles';
 
 
 const WelcomeScreen = () => {
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     paddingTop:15,
     paddingHorizontal:20,
     alignSelf: 'center',
-    backgroundColor:'#FCFCFC',
+    backgroundColor:Colors.backgroundColor,
   },
   backgroundImage: {
     width:340,
