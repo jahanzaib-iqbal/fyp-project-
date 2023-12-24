@@ -13,7 +13,7 @@ import DetailScreen from "./screens/DetailScreen";
 import SplashScreen from "./screens/SplashScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import HeaderLeft from "./components/button/ScreenHeaderLeft";
-
+import CarHomeScreen from "./screens/CarHomeScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -49,7 +49,7 @@ export default function App() {
       <NativeBaseProvider>
         <NavigationContainer>
         <Stack.Navigator
-              initialRouteName="Welcome"
+              initialRouteName="CarHomepage"
               screenOptions={{
                 headerStyle: {
                   backgroundColor: Colors.backgroundColor,
@@ -97,6 +97,11 @@ export default function App() {
       title: "Package Details",
       headerShown: false,
     }}
+  />
+  <Stack.Screen
+    name="CarHomepage"
+    component={CarHomeScreen}
+    options={{ headerShown: false }}
   />
 </Stack.Navigator>
 
