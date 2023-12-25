@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Nishat Hotel Johar Town",
+        "city": "Lahore",
+        "img": "https://images.unsplash.com/photo-1585551897231-77fe523c288a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGhvdGVsfGVufDB8MXwwfHx8MA%3D%3D",
+        "rating": 3.6,
+        "noOfReview": 21,
+        "features": [
+            "Pool",
+            "Wifi",
+            "AC",
+            "Food"
+        ],
+        "price": 3000
+    },
+    {
+        "title": "White and Blue Hotel",
+        "city": "Karachi",
+        "img": "https://www.fodors.com/wp-content/uploads/2022/10/SDH_167_screen-hi-res.jpg",
+        "rating": 3.7,
+        "noOfReview": 16,
+        "features": [
+            "Pool",
+            "Wifi",
+            "AC"
+        ],
+        "price": 4000
+    },
+    {
+        "title": "Pearl Continental Hotel",
+        "city": "Lahore",
+        "img": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/278504590.jpg?k=2d6676b5981e1fafc018b5d092375e37656a136a18b08e07acebf39a6b395ae1&o=&hp=1",
+        "rating": 4.3,
+        "noOfReview": 66,
+        "features": [
+            "Pool",
+            "Wifi",
+            "AC",
+            "Food"
+        ],
+        "price": 3500
+    }
+]
