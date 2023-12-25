@@ -13,7 +13,7 @@ const FeatureSection = ({ iconsData }) => {
   return (
     <View style={styles.featureSection}>
       {iconsData.map((data, index) => (
-        <FeatureIconData key={index} icon={data.url} title={data.title} />
+        <FeatureIconData key={index} icon={data}  />
       ))}
     </View>
   );

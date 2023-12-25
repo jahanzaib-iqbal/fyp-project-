@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import RatingSection from "./RatingSection";
 import CardTitle from "./CardTitle";
@@ -8,10 +8,11 @@ import PriceTag from "./PriceTag";
 import Favorite from "./Favorite";
 
 const MainCard = ({ cardData }) => {
-  const iconsData = [
-    { url: "game-icons:race-car", title: "Sedan" },
-    { url: "mdi:automatic", title: "Automatic" },
-  ];
+  
+  useEffect(() => {
+    // Log the cardData to the console
+    console.log("Card Data:", cardData);
+  }, [cardData]);
   return (
     <View style={styles.sectionLayout}>
       <LinearGradient
@@ -33,13 +34,13 @@ const MainCard = ({ cardData }) => {
           <View style={styles.rightSection}>
             <View>
               <View>
-                <RatingSection rating={4.8} noOfReviews={73} />
-                <CardTitle title="2019 Honda Civic X" city="Lahore, Pakistan" />
+                <RatingSection rating={cardData.rating} noOfReviews={cardData.noOfReview} />
+                <CardTitle title={cardData.title} city={`${cardData.city}, Pakistan`} />
               </View>
-              <FeatureSection iconsData={iconsData} />
+              <FeatureSection iconsData={cardData.features} />
             </View>
 
-            <PriceTag price="2000Rs" />
+            <PriceTag price={cardData.price} />
             <Favorite />
           </View>
         </Pressable>
@@ -55,16 +56,17 @@ const styles = StyleSheet.create({
   sectionLayout: {
     minHeight: 200,
     marginTop: 21,
-    width: "90%",
+    width: 400,
     flexDirection: "row",
-
-    // shadowColor: "#000", // Color of the shadow
-    // shadowOffset: {
-    //   width: 0, // Horizontal distance of the shadow
-    //   height: 2, // Vertical distance of the shadow
-    // },
-    // shadowOpacity: 0.25,
-    // shadowRadius: 3.84,
+    marginHorizontal: 10,
+    paddingHorizontal: 10,
+    shadowColor: "#000", // Color of the shadow
+    shadowOffset: {
+      width: 0, // Horizontal distance of the shadow
+      height: 2, // Vertical distance of the shadow
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
     overflow: "hidden",
     elevation: 1,
     // borderRadius: 7,

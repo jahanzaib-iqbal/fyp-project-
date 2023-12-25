@@ -8,12 +8,12 @@ import {
   Padding,
 } from "../../../constants/GlobalStyles";
 import { Iconify } from "react-native-iconify";
-const FeatureIconData = ({ icon, title }) => {
+const FeatureIconData = ({ icon }) => {
   const renderIcon = (iconName) => {
     switch (iconName) {
-      case "game-icons:race-car":
+      case "sedan":
         return <Iconify icon="game-icons:race-car" size={20} color="#70dad3" />;
-      case "mdi:automatic":
+      case "automatic":
         return <Iconify icon="mdi:automatic" size={20} color="#70dad3" />;
       default:
         return null;
@@ -23,7 +23,7 @@ const FeatureIconData = ({ icon, title }) => {
   return (
     <View style={styles.featureChild}>
       {renderIcon(icon)}
-      <Text style={styles.featureIconText}>{title}</Text>
+      <Text style={styles.featureIconText}>{icon}</Text>
     </View>
   );
 };

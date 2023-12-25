@@ -7,7 +7,7 @@
         "noOfReview": 21,
         "features": [
             "sedan",
-            "hatchback"
+            "automatic"
         ],
         "price": 3000
     },
@@ -18,8 +18,8 @@
         "rating": 3.7,
         "noOfReview": 16,
         "features": [
-            "automatic",
-            "manual"
+            "sedan",
+            "automatic"
         ],
         "price": 4000
     },
@@ -35,5 +35,4 @@
         ],
         "price": 3500
     },
-  
 ]
