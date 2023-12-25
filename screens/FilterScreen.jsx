@@ -88,7 +88,7 @@ const FilterScreen = () => {
             />
             <Text style={styles.title16}>Reset all</Text>
           </View>
-          {/* <Type text="Show Result" status="active" onclick={clickFunc} /> */}
+
           <LinearGradient
             style={styles.typeContainer}
             locations={[0, 1]}
