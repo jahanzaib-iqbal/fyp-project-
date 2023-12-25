@@ -1,0 +1,39 @@
+[
+    {
+        "title": "2019 Ford Mustang",
+        "city": "Faisalabad",
+        "Img": "url",
+        "rating": 3.6,
+        "noOfReview": 21,
+        "features": [
+            "sedan",
+            "hatchback"
+        ],
+        "price": 3000
+    },
+    {
+        "title": "2019 Ford Mustang",
+        "city": "Karachi",
+        "Img": "url",
+        "rating": 3.7,
+        "noOfReview": 16,
+        "features": [
+            "automatic",
+            "manual"
+        ],
+        "price": 4000
+    },
+    {
+        "title": "2019 BMW 3 Series",
+        "city": "Multan",
+        "Img": "url",
+        "rating": 4.3,
+        "noOfReview": 66,
+        "features": [
+            "sedan",
+            "automatic"
+        ],
+        "price": 3500
+    },
+  
+]
