@@ -19,7 +19,6 @@ const Type = (props) => {
       style={[
         status === "active" ? styles.typeContainer : styles.disableContainer,
       ]}
-      // style={styles.typeContainer}
       start={[0, 0]}
       end={[1, 1]}
       locations={[0, 1]}
