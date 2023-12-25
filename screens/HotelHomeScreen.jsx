@@ -56,8 +56,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: 20,
-
-    backgroundColor: "white", // Ensure the background behind cards is white
+    backgroundColor: "white",
   },
   container: {
     flex: 1,
