@@ -173,13 +173,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
   },
-  button: {
-    // borderRadius: 20,
-    // paddingVertical: 10,
-    // paddingHorizontal: 12,
-    // backgroundColor: "#3bb6ae",
-    // marginVertical: 5,
-  },
+  
   typeContainer: {
     borderRadius: 20,
     overflow: "hidden", // To clip the gradient within the border radius
