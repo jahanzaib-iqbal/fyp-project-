@@ -4,7 +4,6 @@ import ImageSlider from "./ImageSlider";
 
 const DetailHeader = ({ images }) => {
   console.log("Images in header");
-  // console.log(images);
   return (
     <View>
       <ImageSlider itemsArray={images} />
